@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the OnPage SEO extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_onpageseo_domain_model_pages">Pages</label>
+			<label index="tx_onpageseo_domain_model_pages.titletag">SEO-Title</label>
+			<label index="tx_onpageseo_domain_model_pages.canonicaltag">canonicaltag</label>
+			<label index="tx_onpageseo_domain_model_pages.fbimage">Facebook Image</label>
+			<label index="tx_onpageseo_domain_model_pages.fbdesc">Facebook Description</label>
+			<label index="tx_onpageseo_domain_model_pages.gplusdesc">Google Plus Description</label>
+			<label index="tx_onpageseo_domain_model_pages.keywords">Add Keywords from List - use them like tags</label>
+			<label index="tx_onpageseo_domain_model_keywords">Keywords for Pages</label>
+			<label index="tx_onpageseo_domain_model_keywords.title">Keyword-Title</label>
+		</languageKey>
+	</data>
+</T3locallang>

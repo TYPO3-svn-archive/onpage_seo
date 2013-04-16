@@ -1,0 +1,44 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Pages</h1>
+
+<f:flashMessages />
+
+<table  class="tx_onpageseo" >
+	<tr>
+		<th><f:translate key="tx_onpageseo_domain_model_pages.titletag" /></th>
+		<th><f:translate key="tx_onpageseo_domain_model_pages.canonicaltag" /></th>
+		<th><f:translate key="tx_onpageseo_domain_model_pages.fbimage" /></th>
+		<th><f:translate key="tx_onpageseo_domain_model_pages.fbdesc" /></th>
+		<th><f:translate key="tx_onpageseo_domain_model_pages.gplusdesc" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{pagess}" as="pages">
+		<tr>
+			<td><f:link.action action="show" arguments="{pages : pages}"> {pages.titletag}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{pages : pages}"> {pages.canonicaltag}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{pages : pages}"> {pages.fbimage}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{pages : pages}"> {pages.fbdesc}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{pages : pages}"> {pages.gplusdesc}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{pages : pages}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{pages : pages}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Pages</f:link.action>
+</f:section>

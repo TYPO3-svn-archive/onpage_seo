@@ -1,0 +1,51 @@
+plugin.tx_onpageseo {
+	view {
+		templateRootPath = {$plugin.tx_onpageseo.view.templateRootPath}
+		partialRootPath = {$plugin.tx_onpageseo.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_onpageseo.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_onpageseo.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_onpageseo._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-onpage-seo table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-onpage-seo table th {
+		font-weight:bold;
+	}
+
+	.tx-onpage-seo table td {
+		vertical-align:top;
+	}
+)
+
+ # Module configuration
+module.tx_onpageseo {
+	persistence {
+		storagePid = {$module.tx_onpageseo.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_onpageseo.view.templateRootPath}
+		partialRootPath = {$module.tx_onpageseo.view.partialRootPath}
+		layoutRootPath = {$module.tx_onpageseo.view.layoutRootPath}
+	}
+}

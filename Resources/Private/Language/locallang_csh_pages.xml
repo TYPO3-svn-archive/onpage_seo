@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table pages</description>
+		<type>CSH</type>
+		<csh_table>pages</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+	   
+			<label index="titletag.description">SEO-Title</label>
+			<label index="canonicaltag.description">canonicaltag</label>
+			<label index="fbimage.description">Facebook Image</label>
+			<label index="fbdesc.description">Facebook Description</label>
+			<label index="gplusdesc.description">Google Plus Description</label>
+			<label index="keywords.description">Add Keywords from List - use them like tags</label>
+		</languageKey>
+	</data>
+</T3locallang>

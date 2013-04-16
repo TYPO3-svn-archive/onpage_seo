@@ -1,0 +1,14 @@
+config.tx_extbase{
+    persistence{
+        classes{
+
+            Tx_OnpageSeo_Domain_Model_Pages {
+                mapping {
+                    tableName = pages
+                    recordType = Tx_OnpageSeo_Pages
+                }
+            }
+            
+    	}
+    }
+}
