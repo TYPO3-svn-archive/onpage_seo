@@ -3,19 +3,16 @@
 #
 CREATE TABLE pages (
 
-	titletag varchar(255) DEFAULT '' NOT NULL,
-	canonicaltag varchar(255) DEFAULT '' NOT NULL,
 	fbimage text NOT NULL,
 	fbdesc text NOT NULL,
-	gplusdesc text NOT NULL,
-	keywords int(11) unsigned DEFAULT '0' NOT NULL,
+	keywordlist int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
 
 #
-# Table structure for table 'tx_onpageseo_domain_model_keywords'
+# Table structure for table 'tx_onpageseo_domain_model_keyword'
 #
-CREATE TABLE tx_onpageseo_domain_model_keywords (
+CREATE TABLE tx_onpageseo_domain_model_keyword (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -53,9 +50,9 @@ CREATE TABLE tx_onpageseo_domain_model_keywords (
 );
 
 #
-# Table structure for table 'tx_onpageseo_pages_keywords_mm'
+# Table structure for table 'tx_onpageseo_page_keyword_mm'
 #
-CREATE TABLE tx_onpageseo_pages_keywords_mm (
+CREATE TABLE tx_onpageseo_page_keyword_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

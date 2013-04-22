@@ -7,14 +7,14 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Sitemap',
 	array(
-		'Pages' => 'list, show',
-		'Keywords' => 'list, show',
+		'Page' => 'list, show',
+		'Keyword' => 'list, show',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Pages' => '',
-		'Keywords' => '',
+		'Page' => '',
+		'Keyword' => '',
 		
 	)
 );
@@ -23,14 +23,14 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Keywordmap',
 	array(
-		'Pages' => 'list, show',
-		'Keywords' => 'list, show',
+		'Page' => 'list, show',
+		'Keyword' => 'list, show',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Pages' => '',
-		'Keywords' => '',
+		'Page' => '',
+		'Keyword' => '',
 		
 	)
 );

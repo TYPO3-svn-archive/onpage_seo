@@ -1,14 +1,21 @@
-config.tx_extbase{
-    persistence{
-        classes{
-
-            Tx_OnpageSeo_Domain_Model_Pages {
-                mapping {
-                    tableName = pages
-                    recordType = Tx_OnpageSeo_Pages
+plugin.tx_onpageseo {
+        persistence {
+                classes {
+                        Tx_OnpageSeo_Domain_Model_Page {
+                                mapping {
+                                        tableName = pages
+                                        columns {
+                                                pid.mapOnProperty = pid
+                                                deleted.mapOnProperty = deleted
+                                                doktype.mapOnProperty = doktype
+                                                sorting.mapOnProperty = sorting
+                                           
+                                        }
+                                }
+                        }
                 }
-            }
-            
-    	}
-    }
+                storagePid =
+        }
 }
+
+module.tx_onpageseo.persistence < plugin.tx_onpageseo.persistence

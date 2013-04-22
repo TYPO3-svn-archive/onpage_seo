@@ -53,40 +53,6 @@ class Tx_OnpageSeo_Domain_Model_PagesTest extends Tx_Extbase_Tests_Unit_BaseTest
 	/**
 	 * @test
 	 */
-	public function getTitletagReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setTitletagForStringSetsTitletag() { 
-		$this->fixture->setTitletag('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getTitletag()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getCanonicaltagReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setCanonicaltagForStringSetsCanonicaltag() { 
-		$this->fixture->setCanonicaltag('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getCanonicaltag()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
 	public function getFbimageReturnsInitialValueForString() { }
 
 	/**
@@ -138,58 +104,58 @@ class Tx_OnpageSeo_Domain_Model_PagesTest extends Tx_Extbase_Tests_Unit_BaseTest
 	/**
 	 * @test
 	 */
-	public function getKeywordsReturnsInitialValueForObjectStorageContainingTx_OnpageSeo_Domain_Model_Keywords() { 
+	public function getKeywordlistReturnsInitialValueForObjectStorageContainingTx_OnpageSeo_Domain_Model_Keywords() { 
 		$newObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getKeywords()
+			$this->fixture->getKeywordlist()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setKeywordsForObjectStorageContainingTx_OnpageSeo_Domain_Model_KeywordsSetsKeywords() { 
-		$keyword = new Tx_OnpageSeo_Domain_Model_Keywords();
-		$objectStorageHoldingExactlyOneKeywords = new Tx_Extbase_Persistence_ObjectStorage();
-		$objectStorageHoldingExactlyOneKeywords->attach($keyword);
-		$this->fixture->setKeywords($objectStorageHoldingExactlyOneKeywords);
+	public function setKeywordlistForObjectStorageContainingTx_OnpageSeo_Domain_Model_KeywordsSetsKeywordlist() { 
+		$keywordlist = new Tx_OnpageSeo_Domain_Model_Keywords();
+		$objectStorageHoldingExactlyOneKeywordlist = new Tx_Extbase_Persistence_ObjectStorage();
+		$objectStorageHoldingExactlyOneKeywordlist->attach($keywordlist);
+		$this->fixture->setKeywordlist($objectStorageHoldingExactlyOneKeywordlist);
 
 		$this->assertSame(
-			$objectStorageHoldingExactlyOneKeywords,
-			$this->fixture->getKeywords()
+			$objectStorageHoldingExactlyOneKeywordlist,
+			$this->fixture->getKeywordlist()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function addKeywordToObjectStorageHoldingKeywords() {
-		$keyword = new Tx_OnpageSeo_Domain_Model_Keywords();
-		$objectStorageHoldingExactlyOneKeyword = new Tx_Extbase_Persistence_ObjectStorage();
-		$objectStorageHoldingExactlyOneKeyword->attach($keyword);
-		$this->fixture->addKeyword($keyword);
+	public function addKeywordlistToObjectStorageHoldingKeywordlist() {
+		$keywordlist = new Tx_OnpageSeo_Domain_Model_Keywords();
+		$objectStorageHoldingExactlyOneKeywordlist = new Tx_Extbase_Persistence_ObjectStorage();
+		$objectStorageHoldingExactlyOneKeywordlist->attach($keywordlist);
+		$this->fixture->addKeywordlist($keywordlist);
 
 		$this->assertEquals(
-			$objectStorageHoldingExactlyOneKeyword,
-			$this->fixture->getKeywords()
+			$objectStorageHoldingExactlyOneKeywordlist,
+			$this->fixture->getKeywordlist()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function removeKeywordFromObjectStorageHoldingKeywords() {
-		$keyword = new Tx_OnpageSeo_Domain_Model_Keywords();
+	public function removeKeywordlistFromObjectStorageHoldingKeywordlist() {
+		$keywordlist = new Tx_OnpageSeo_Domain_Model_Keywords();
 		$localObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
-		$localObjectStorage->attach($keyword);
-		$localObjectStorage->detach($keyword);
-		$this->fixture->addKeyword($keyword);
-		$this->fixture->removeKeyword($keyword);
+		$localObjectStorage->attach($keywordlist);
+		$localObjectStorage->detach($keywordlist);
+		$this->fixture->addKeywordlist($keywordlist);
+		$this->fixture->removeKeywordlist($keywordlist);
 
 		$this->assertEquals(
 			$localObjectStorage,
-			$this->fixture->getKeywords()
+			$this->fixture->getKeywordlist()
 		);
 	}
 	

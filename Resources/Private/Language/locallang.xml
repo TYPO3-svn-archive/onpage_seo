@@ -6,15 +6,12 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="tx_onpageseo_domain_model_pages">Pages</label>
-			<label index="tx_onpageseo_domain_model_pages.titletag">SEO-Title</label>
-			<label index="tx_onpageseo_domain_model_pages.canonicaltag">canonicaltag</label>
-			<label index="tx_onpageseo_domain_model_pages.fbimage">Facebook Image</label>
-			<label index="tx_onpageseo_domain_model_pages.fbdesc">Facebook Description</label>
-			<label index="tx_onpageseo_domain_model_pages.gplusdesc">Google Plus Description</label>
-			<label index="tx_onpageseo_domain_model_pages.keywords">Add Keywords from List - use them like tags</label>
-			<label index="tx_onpageseo_domain_model_keywords">Keywords for Pages</label>
-			<label index="tx_onpageseo_domain_model_keywords.title">Keyword-Title</label>
+			<label index="tx_onpageseo_domain_model_page">Page</label>
+			<label index="tx_onpageseo_domain_model_page.fbimage">Facebook Image</label>
+			<label index="tx_onpageseo_domain_model_page.fbdesc">Facebook Description</label>
+			<label index="tx_onpageseo_domain_model_page.keywordlist">Add Keywords from List - use them like tags</label>
+			<label index="tx_onpageseo_domain_model_keyword">Keywords for Pages</label>
+			<label index="tx_onpageseo_domain_model_keyword.title">Keyword-Title</label>
 		</languageKey>
 	</data>
 </T3locallang>

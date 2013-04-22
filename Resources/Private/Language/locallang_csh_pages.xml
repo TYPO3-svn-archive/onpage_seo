@@ -8,12 +8,9 @@
 	<data type="array">
 	<languageKey index="default" type="array">
 	   
-			<label index="titletag.description">SEO-Title</label>
-			<label index="canonicaltag.description">canonicaltag</label>
 			<label index="fbimage.description">Facebook Image</label>
 			<label index="fbdesc.description">Facebook Description</label>
-			<label index="gplusdesc.description">Google Plus Description</label>
-			<label index="keywords.description">Add Keywords from List - use them like tags</label>
+			<label index="keywordlist.description">Add Keywords from List - use them like tags</label>
 		</languageKey>
 	</data>
 </T3locallang>

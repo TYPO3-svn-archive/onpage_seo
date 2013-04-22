@@ -7,17 +7,14 @@
 	<data type="array">
 		<languageKey index="default" type="array">
             
-			<label index="tx_onpageseo_domain_model_pages">Pages</label>
-			<label index="tx_onpageseo_domain_model_pages.titletag">Titletag</label>
-			<label index="tx_onpageseo_domain_model_pages.canonicaltag">Canonicaltag</label>
-			<label index="tx_onpageseo_domain_model_pages.fbimage">Fbimage</label>
-			<label index="tx_onpageseo_domain_model_pages.fbdesc">Fbdesc</label>
-			<label index="tx_onpageseo_domain_model_pages.gplusdesc">Gplusdesc</label>
-			<label index="tx_onpageseo_domain_model_pages.keywords">Keywords</label>
-			<label index="pages.tx_extbase_type.Tx_OnpageSeo_Pages">OnPage SEO Pages</label>
+			<label index="tx_onpageseo_domain_model_page">Page</label>
+			<label index="tx_onpageseo_domain_model_page.fbimage">Fbimage</label>
+			<label index="tx_onpageseo_domain_model_page.fbdesc">Fbdesc</label>
+			<label index="tx_onpageseo_domain_model_page.keywordlist">Keywordlist</label>
+			<label index="pages.tx_extbase_type.Tx_OnpageSeo_Page">OnPage SEO Page</label>
 			
-			<label index="tx_onpageseo_domain_model_keywords">Keywords</label>
-			<label index="tx_onpageseo_domain_model_keywords.title">Title</label>
+			<label index="tx_onpageseo_domain_model_keyword">Keyword</label>
+			<label index="tx_onpageseo_domain_model_keyword.title">Title</label>
 
 		</languageKey>
 	</data>

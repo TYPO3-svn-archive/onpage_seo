@@ -1,51 +1,177 @@
 plugin.tx_onpageseo {
-	view {
-		templateRootPath = {$plugin.tx_onpageseo.view.templateRootPath}
-		partialRootPath = {$plugin.tx_onpageseo.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_onpageseo.view.layoutRootPath}
-	}
-	persistence {
-		storagePid = {$plugin.tx_onpageseo.persistence.storagePid}
-	}
-	features {
-		# uncomment the following line to enable the new Property Mapper.
-		# rewrittenPropertyMapper = 1
-	}
+    view {
+        templateRootPath = {$plugin.tx_onpageseo.view.templateRootPath}
+        partialRootPath = {$plugin.tx_onpageseo.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_onpageseo.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_onpageseo.persistence.storagePid}
+    }
+    features {
+        # uncomment the following line to enable the new Property Mapper.
+        # rewrittenPropertyMapper = 1
+    }
 }
 
 plugin.tx_onpageseo._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
 
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
 
-	.tx-onpage-seo table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
+    .tx-onpage-seo table {
+        border-collapse:separate;
+        border-spacing:10px;
+    }
 
-	.tx-onpage-seo table th {
-		font-weight:bold;
-	}
+    .tx-onpage-seo table th {
+        font-weight:bold;
+    }
 
-	.tx-onpage-seo table td {
-		vertical-align:top;
-	}
+    .tx-onpage-seo table td {
+        vertical-align:top;
+    }
 )
 
  # Module configuration
 module.tx_onpageseo {
-	persistence {
-		storagePid = {$module.tx_onpageseo.persistence.storagePid}
-	}
-	view {
-		templateRootPath = {$module.tx_onpageseo.view.templateRootPath}
-		partialRootPath = {$module.tx_onpageseo.view.partialRootPath}
-		layoutRootPath = {$module.tx_onpageseo.view.layoutRootPath}
-	}
+    persistence {
+        storagePid = {$module.tx_onpageseo.persistence.storagePid}
+    }
+    view {
+       # templateRootPath = {$module.tx_onpageseo.view.templateRootPath}
+       # partialRootPath = {$module.tx_onpageseo.view.partialRootPath}
+       # layoutRootPath = {$module.tx_onpageseo.view.layoutRootPath}
+    }
 }
+
+plugin.tx_onpageseo.headerElements = COA
+plugin.tx_onpageseo.headerElements {
+
+	# line break
+	linebreak = TEXT
+	linebreak.value (
+
+
+    )
+
+	# Keywords tag
+	keywords = TEXT
+	keywords.data = page:keywords
+	keywords.stdWrap.noTrimWrap = {$plugin.tx_seo.keywordsWrap}
+	keywords.stdWrap.stdWrap >
+	keywords.required = 1
+	keywords.wrap = <meta name="keywords" content="|" />
+	keywords.append < .linebreak
+
+	# Date tag (last changed)
+	datetag = TEXT
+	datetag.data = page:SYS_LASTCHANGED // page:crdate
+	datetag.date = Y-m-d
+	datetag.stdWrap >
+	datetag.wrap = <meta name="date" content="|" />
+	datetag.append < .linebreak
+
+    # Add OpenGraph meta data: - for facebook
+    opengraph = COA
+    opengraph {
+        1 = TEXT
+        1.append < plugin.tx_onpageseo.headerElements.linebreak
+        # only show the wrap if data is set
+        1.stdWrap.required = 1
+
+        10 < .1
+        10.data = {$config.locale_all}
+        10.stdWrap.wrap = <meta property='og:locale' content='de_DE'/>
+
+        15 < .1
+        15.data = page:title
+        15.stdWrap.wrap = <meta property='og:title' content='|'/>
+
+        20 < .1
+        20.data = page:fbdesc // page:description
+        20.stdWrap.wrap = <meta property='og:description' content='|'/>
+
+
+        25 < .1
+        25.data =
+        25.stdWrap.wrap = <meta property='og:url' content='http://www.arnelorenz.de/kontakt/'/>
+        25 >
+
+        30 < .1
+        30.data =
+        30.stdWrap.wrap = <meta property='og:site_name' content='ArneLorenz.de'/>
+
+        35 < .1
+        35.data = page:SYS_LASTCHANGED // page:crdate
+        35.wrap = <meta property='og:type' content='article'/>
+        35 >
+
+        40 < .1
+        40.data = {$config.fbadmin}
+        40.stdWrap.wrap = <meta property="fb:admins" content="|">
+
+        # image: https://developers.facebook.com/docs/opengraph/property-types/
+
+        90 = COA
+        90.10 < .1
+        90.10.data = page:fbimage
+        90.10.wrap = <meta property="og:image" content="|">
+        90.20 < .1
+        90.20.value = <meta property="og:image:type" content="image/png">
+        90.30 < .1
+        90.30.value = <meta property="og:image:width" content="200">
+        90.40 < .1
+        90.40.value = <meta property="og:image:height" content="500">
+    }
+
+	/*
+# # Google Publisher Page:
+#<link rel="author" href="http://plus.google.com/100021511087192315151"/>
+	*/
+
+}
+
+[globalVar = TSFE:page|fbimage = ]
+    plugin.tx_onpageseo.headerElements.opengraph.90 >
+[global]
+
+plugin.tx_onpageseo {
+
+    headerData = COA
+
+    # break the line
+    headerData.5 < .headerElements.linebreak
+
+    # Keywords tag
+    # headerData.50 < .headerElements.keywords
+
+	# Date tag (last changed)
+	headerData.60 < .headerElements.datetag
+
+	# Add OpenGraph meta data: - for facebook
+	headerData.80 < .headerElements.opengraph
+}
+
+page.headerData.137 < plugin.tx_onpageseo.headerData
+
+# Include sitemap.xml
+/*
+includeLibs.tx_onpageseo_sitemap = EXT:onpageseo/class.tx_onpageseo_sitemap.php
+tx_seo_xmlsitemaps = PAGE
+tx_seo_xmlsitemaps {
+	typeNum = 776
+	config.disableAllHeaderCode = 1
+	config.renderCharset = UTF-8
+	config.xmlprologue = xml_10
+	config.additionalHeaders = Content-type: text/xml
+	config.xhtml_cleaning = 0
+	10 = USER
+	10.userFunc = tx_onpageseo_sitemap->renderXMLSitemap
+}
+*/
