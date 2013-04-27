@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3locallang>
-	<meta type="array">
-		<description>Context Sensitive Help (CSH) for table pages</description>
-		<type>CSH</type>
-		<csh_table>pages</csh_table>
-	</meta>
-	<data type="array">
-	<languageKey index="default" type="array">
-	   
-			<label index="fbimage.description">Facebook Image</label>
-			<label index="fbdesc.description">Facebook Description</label>
-			<label index="keywordlist.description">Add Keywords from List - use them like tags</label>
-		</languageKey>
-	</data>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table pages</description>
+        <type>CSH</type>
+        <csh_table>pages</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="fbimage.description">Facebook Image</label>
+            <label index="fbdesc.description">Facebook Description</label>
+            <label index="keywordlist.description">Add Keywords from List - use them like tags</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="fbimage.description">Facebook Bild</label>
+            <label index="fbdesc.description">Facebook Beschreibung</label>
+            <label index="keywordlist.description">Neue Keywords aus Liste hinzufügen - sie können wie Tags verwendet werden.</label>
+        </languageKey>
+    </data>
 </T3locallang>

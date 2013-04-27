@@ -7,14 +7,14 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Sitemap',
 	array(
-		'Page' => 'list, show',
-		'Keyword' => 'list, show',
+		'Page' => 'list, show, new, create, edit, update, delete, test',
+		'Keyword' => 'list, show, new, create, edit, update, delete',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Page' => '',
-		'Keyword' => '',
+		'Page' => 'create, update, delete, ',
+		'Keyword' => 'create, update, delete',
 		
 	)
 );
@@ -34,5 +34,4 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 		
 	)
 );
-
 ?>

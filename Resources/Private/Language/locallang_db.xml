@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3locallang>
-	<meta type="array">
-		<type>database</type>
-		<description>Language labels for database tables/fields belonging to extension 'onpage_seo'</description>
-	</meta>
-	<data type="array">
-		<languageKey index="default" type="array">
+    <meta type="array">
+        <type>database</type>
+        <description>Language labels for database tables/fields belonging to extension 'onpage_seo'</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
             
-			<label index="tx_onpageseo_domain_model_page">Page</label>
-			<label index="tx_onpageseo_domain_model_page.fbimage">Fbimage</label>
-			<label index="tx_onpageseo_domain_model_page.fbdesc">Fbdesc</label>
-			<label index="tx_onpageseo_domain_model_page.keywordlist">Keywordlist</label>
-			<label index="pages.tx_extbase_type.Tx_OnpageSeo_Page">OnPage SEO Page</label>
-			
-			<label index="tx_onpageseo_domain_model_keyword">Keyword</label>
-			<label index="tx_onpageseo_domain_model_keyword.title">Title</label>
+            <label index="tx_onpageseo_domain_model_page">Page</label>
+            <label index="tx_onpageseo_domain_model_page.fbimage">Fbimage</label>
+            <label index="tx_onpageseo_domain_model_page.fbdesc">Fbdesc</label>
+            <label index="tx_onpageseo_domain_model_page.keywordlist">Keywordlist</label>
+            <label index="pages.tx_extbase_type.Tx_OnpageSeo_Page">OnPage SEO Page</label>
+            
+            <label index="tx_onpageseo_domain_model_keyword">Keyword</label>
+            <label index="tx_onpageseo_domain_model_keyword.title">Title</label>
 
-		</languageKey>
-	</data>
+        </languageKey>
+        <languageKey index="de" type="array">
+            
+            <label index="tx_onpageseo_domain_model_page">Seite</label>
+            <label index="tx_onpageseo_domain_model_page.fbimage">Facebook Bild</label>
+            <label index="tx_onpageseo_domain_model_page.fbdesc">Facebook Beschreibungs</label>
+            <label index="tx_onpageseo_domain_model_page.keywordlist">Keyword Liste</label>
+            <label index="pages.tx_extbase_type.Tx_OnpageSeo_Page">OnPage SEO Seite</label>
+            
+            <label index="tx_onpageseo_domain_model_keyword">Keyword</label>
+            <label index="tx_onpageseo_domain_model_keyword.title">Titel</label>
+
+        </languageKey>
+    </data>
 </T3locallang>

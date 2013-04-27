@@ -44,9 +44,9 @@ module.tx_onpageseo {
         storagePid = {$module.tx_onpageseo.persistence.storagePid}
     }
     view {
-       # templateRootPath = {$module.tx_onpageseo.view.templateRootPath}
-       # partialRootPath = {$module.tx_onpageseo.view.partialRootPath}
-       # layoutRootPath = {$module.tx_onpageseo.view.layoutRootPath}
+       templateRootPath = {$module.tx_onpageseo.view.templateRootPath}
+       partialRootPath = {$module.tx_onpageseo.view.partialRootPath}
+       layoutRootPath = {$module.tx_onpageseo.view.layoutRootPath}
     }
 }
 
@@ -63,7 +63,7 @@ plugin.tx_onpageseo.headerElements {
 	# Keywords tag
 	keywords = TEXT
 	keywords.data = page:keywords
-	keywords.stdWrap.noTrimWrap = {$plugin.tx_seo.keywordsWrap}
+	keywords.stdWrap.noTrimWrap = {$plugin.tx_onpageseo.keywordsWrap}
 	keywords.stdWrap.stdWrap >
 	keywords.required = 1
 	keywords.wrap = <meta name="keywords" content="|" />
@@ -76,6 +76,18 @@ plugin.tx_onpageseo.headerElements {
 	datetag.stdWrap >
 	datetag.wrap = <meta name="date" content="|" />
 	datetag.append < .linebreak
+
+    # Building the canonical tag
+    /*
+    canonical = TEXT
+    canonical.data >
+    canonical.cObject = USER
+    canonical.cObject.userFunc = tx_seobasics->getCanonicalUrl
+    canonical.required = 1
+    canonical.if.isTrue = {$plugin.tx_seo.enableCanonicalTag}
+    canonical.stdWrap >
+    canonical.wrap = <link rel="canonical" href="|" />
+    */
 
     # Add OpenGraph meta data: - for facebook
     opengraph = COA
@@ -98,19 +110,20 @@ plugin.tx_onpageseo.headerElements {
         20.stdWrap.wrap = <meta property='og:description' content='|'/>
 
 
+        24 = TEXT
+        24.data = getIndpEnv:TYPO3_SITE_URL
+        24.wrap = <meta property='og:url' content='|
         25 < .1
-        25.data =
-        25.stdWrap.wrap = <meta property='og:url' content='http://www.arnelorenz.de/kontakt/'/>
-        25 >
+        25=TEXT
+        25.typolink {
+          parameter.data=TSFE:id
+          returnLast=url
+        }
+        25.wrap = |'/>
 
         30 < .1
         30.data =
         30.stdWrap.wrap = <meta property='og:site_name' content='ArneLorenz.de'/>
-
-        35 < .1
-        35.data = page:SYS_LASTCHANGED // page:crdate
-        35.wrap = <meta property='og:type' content='article'/>
-        35 >
 
         40 < .1
         40.data = {$config.fbadmin}
@@ -120,14 +133,32 @@ plugin.tx_onpageseo.headerElements {
 
         90 = COA
         90.10 < .1
-        90.10.data = page:fbimage
+        90.10 = COA
+        90.10.2 = TEXT
+        90.10.2.data = getIndpEnv:TYPO3_SITE_URL
+        90.10.2.wrap = |uploads/tx_onpageseo/
+        90.10.4 = TEXT
+        90.10.4.data = page:fbimage
         90.10.wrap = <meta property="og:image" content="|">
+
+        90.15 = IMAGE
+        # 90.1.file.maxW = 265
+        90.15.file{
+            import.field = fbimage
+            import = uploads/tx_onpageseo/
+        }
+
         90.20 < .1
-        90.20.value = <meta property="og:image:type" content="image/png">
+        90.20.data = TSFE:lastImageInfo|2
+        90.20.wrap = <meta property="og:image:type" content="image/|">
         90.30 < .1
-        90.30.value = <meta property="og:image:width" content="200">
+        90.30.data = TSFE:lastImageInfo|0
+        90.30.wrap = <meta property="og:image:width" content="|">
         90.40 < .1
-        90.40.value = <meta property="og:image:height" content="500">
+        90.40.data = TSFE:lastImageInfo|1
+        90.40.wrap = <meta property="og:image:height" content="|">
+
+        90.15 >
     }
 
 	/*

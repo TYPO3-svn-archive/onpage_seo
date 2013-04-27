@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3locallang>
-	<meta type="array">
-		<type>module</type>
-		<description>Language labels for the OnPage SEO extension in the FRONTEND</description>
-	</meta>
-	<data type="array">
-		<languageKey index="default" type="array">
-			<label index="tx_onpageseo_domain_model_page">Page</label>
-			<label index="tx_onpageseo_domain_model_page.fbimage">Facebook Image</label>
-			<label index="tx_onpageseo_domain_model_page.fbdesc">Facebook Description</label>
-			<label index="tx_onpageseo_domain_model_page.keywordlist">Add Keywords from List - use them like tags</label>
-			<label index="tx_onpageseo_domain_model_keyword">Keywords for Pages</label>
-			<label index="tx_onpageseo_domain_model_keyword.title">Keyword-Title</label>
-		</languageKey>
-	</data>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for the OnPage SEO extension in the FRONTEND</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="tx_onpageseo_domain_model_page">Page</label>
+            <label index="tx_onpageseo_domain_model_page.fbimage">Facebook Image</label>
+            <label index="tx_onpageseo_domain_model_page.fbdesc">Facebook Description</label>
+            <label index="tx_onpageseo_domain_model_page.keywordlist">Add Keywords from List - use them like tags</label>
+            <label index="tx_onpageseo_domain_model_keyword">Keywords for Pages</label>
+            <label index="tx_onpageseo_domain_model_keyword.title">Keyword-Title</label>
+            <label index="tx_onpageseo_domain_model_page.listheadline">Listing for Page</label>
+            <label index="tx_onpageseo_domain_model_page.titlefield">Title</label>
+            <label index="tx_onpageseo_domain_model_page.uid">UID</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="tx_onpageseo_domain_model_page">Seite</label>
+            <label index="tx_onpageseo_domain_model_page.fbimage">Facebook Bild</label>
+            <label index="tx_onpageseo_domain_model_page.fbdesc">Facebook Beschreibung</label>
+            <label index="tx_onpageseo_domain_model_page.keywordlist">Neue Keywords aus Liste hinzufügen - sie können wie Tags verwendet werden.</label>
+            <label index="tx_onpageseo_domain_model_keyword">Keywords für Seiten</label>
+            <label index="tx_onpageseo_domain_model_keyword.title">Keyword</label>
+            <label index="tx_onpageseo_domain_model_page.listheadline">Liste der Seiten</label>
+            <label index="tx_onpageseo_domain_model_page.titlefield">Titel</label>
+            <label index="tx_onpageseo_domain_model_page.uid">UID</label>
+        </languageKey>
+    </data>
 </T3locallang>
