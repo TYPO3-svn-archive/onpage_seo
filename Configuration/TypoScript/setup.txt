@@ -11,6 +11,22 @@ plugin.tx_onpageseo {
         # uncomment the following line to enable the new Property Mapper.
         # rewrittenPropertyMapper = 1
     }
+
+    settings = COA
+
+    ajax = PAGE
+    ajax {
+
+        typeNum = 99
+        config {
+            disableAllHeaderCode = 1
+            additionalHeaders = Content-type:application/json
+            xhtml_cleaning = 0
+            admPanel = 0
+        }
+
+        10 < tt_content.list.20.asajaxexample_pi1
+    }
 }
 
 plugin.tx_onpageseo._CSS_DEFAULT_STYLE (
@@ -59,6 +75,21 @@ plugin.tx_onpageseo.headerElements {
 
 
     )
+
+    # Building the seo title tag
+    seotitle = TEXT
+    seotitle.data = page:seotitle // page:title
+    seotitle.trim = 1
+    seotitle.stdWrap.stdWrap.append = TEXT
+    seotitle.stdWrap.stdWrap.append.data = TSFE:tmpl|sitetitle
+    seotitle.stdWrap.stdWrap.append.trim = 1
+    seotitle.stdWrap.stdWrap.append.required = 1
+    seotitle.stdWrap.stdWrap.append.if.isTrue = {$plugin.tx_onpageseo.titleWrapAppendSiteTitle}
+    seotitle.stdWrap.stdWrap.append.noTrimWrap = | - ||
+    seotitle.stdWrap.noTrimWrap = {$plugin.tx_onpageseo.titleWrap}
+    seotitle.stdWrap.insertData = 1
+    seotitle.htmlSpecialChars = 1
+    seotitle.wrap = <title>|</title>
 
 	# Keywords tag
 	keywords = TEXT
@@ -176,6 +207,9 @@ plugin.tx_onpageseo {
 
     headerData = COA
 
+    # new title tag
+    headerData.1 < .headerElements.seotitle
+
     # break the line
     headerData.5 < .headerElements.linebreak
 
@@ -190,6 +224,9 @@ plugin.tx_onpageseo {
 }
 
 page.headerData.137 < plugin.tx_onpageseo.headerData
+
+# kick the old title
+config.noPageTitle = 2
 
 # Include sitemap.xml
 /*

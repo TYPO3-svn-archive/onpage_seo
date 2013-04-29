@@ -7,9 +7,9 @@
     </meta>
     <data type="array">
         <languageKey index="default" type="array">
-            <label index="fbimage.description">Facebook Image</label>
-            <label index="fbdesc.description">Facebook Description</label>
-            <label index="keywordlist.description">Add Keywords from List - use them like tags</label>
+            <label index="fbimage.description">Facebook image</label>
+            <label index="fbdesc.description">Facebook description</label>
+            <label index="keywordlist.description">Add keywords from list - use them like tags</label>
         </languageKey>
         <languageKey index="de" type="array">
             <label index="fbimage.description">Facebook Bild</label>

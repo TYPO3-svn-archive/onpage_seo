@@ -1,0 +1,29 @@
+.tx_onpageseo_be td{
+    min-width: 20px;
+}
+
+.tx_onpageseo_be .uid{
+    min-width: 25px;
+}
+.tx_onpageseo_be .title{
+    min-width: 100px;
+    width: 20%;
+}
+.tx_onpageseo_be .keyword{
+    min-width: 100px;
+    width: 20%;
+}
+.tx_onpageseo_be .description{
+    min-width: 200px;
+    width: 40%;
+}
+
+.title_green{
+    color: green;
+}
+.title_yellow{
+    color: yellow;
+}
+.title_red{
+    color: red;
+}

@@ -15,6 +15,10 @@
             <label index="tx_onpageseo_domain_model_page.listheadline">Listing for Page</label>
             <label index="tx_onpageseo_domain_model_page.titlefield">Title</label>
             <label index="tx_onpageseo_domain_model_page.uid">UID</label>
+            <label index="select.show">Show</label>
+            <label index="select.list">Overview</label>
+            <label index="select.newkeyword">new Keyword</label>
+            <label index="select.newpage">news Page</label>
         </languageKey>
         <languageKey index="de" type="array">
             <label index="tx_onpageseo_domain_model_page">Seite</label>

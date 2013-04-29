@@ -15,6 +15,7 @@
             
             <label index="tx_onpageseo_domain_model_keyword">Keyword</label>
             <label index="tx_onpageseo_domain_model_keyword.title">Title</label>
+            <label index="tx_onpageseo_domain_model_pages.seotitle">SEO-Title-Tag</label>
 
         </languageKey>
         <languageKey index="de" type="array">

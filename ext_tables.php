@@ -26,7 +26,7 @@ if (TYPO3_MODE === 'BE') {
 		'seo',	// Submodule key
 		'',						// Position
 		array(
-			'Page' => 'list, show, new, create, edit, update, delete, test',
+			'Page' => 'list, show, new, create, edit, update, delete, test, ajax',
             'Keyword' => 'list, show, new, create, edit, update, delete',
 		),
 		array(
@@ -41,7 +41,15 @@ if (TYPO3_MODE === 'BE') {
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'OnPage SEO');
 
 $tmp_onpage_seo_columns = array(
-
+    'seotitle' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:onpage_seo/Resources/Private/Language/locallang_db.xml:tx_onpageseo_domain_model_pages.seotitle',
+        'config' => array(
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim'
+        ),
+    ),
 	'fbimage' => array(
 		'exclude' => 1,
 		'label' => 'LLL:EXT:onpage_seo/Resources/Private/Language/locallang_db.xml:tx_onpageseo_domain_model_page.fbimage',
@@ -105,13 +113,13 @@ $tmp_onpage_seo_columns = array(
 
 t3lib_extMgm::addTCAcolumns('pages',$tmp_onpage_seo_columns);
 // Important add!
-t3lib_extMgm::addToAllTCAtypes('pages', 'keywordlist, fbdesc, fbimage', '', 'after: description');
+t3lib_extMgm::addToAllTCAtypes('pages', 'seotitle, keywordlist, fbdesc, fbimage', '', 'after: description');
 
 $TCA['pages']['columns'][$TCA['pages']['ctrl']['type']]['config']['items'][] = array('LLL:EXT:onpage_seo/Resources/Private/Language/locallang_db.xml:pages.tx_extbase_type.Tx_OnpageSeo_Page','Tx_OnpageSeo_Page');
 
 $TCA['pages']['types']['Tx_OnpageSeo_Page']['showitem'] = $TCA['pages']['types']['1']['showitem'];
 $TCA['pages']['types']['Tx_OnpageSeo_Page']['showitem'] .= ',--div--;LLL:EXT:onpage_seo/Resources/Private/Language/locallang_db.xml:tx_onpageseo_domain_model_page,';
-$TCA['pages']['types']['Tx_OnpageSeo_Page']['showitem'] .= 'fbimage, fbdesc, keywordlist';
+$TCA['pages']['types']['Tx_OnpageSeo_Page']['showitem'] .= 'seotitle, fbimage, fbdesc, keywordlist';
 
 t3lib_extMgm::addLLrefForTCAdescr('tx_onpageseo_domain_model_keyword', 'EXT:onpage_seo/Resources/Private/Language/locallang_csh_tx_onpageseo_domain_model_keyword.xml');
 t3lib_extMgm::allowTableOnStandardPages('tx_onpageseo_domain_model_keyword');

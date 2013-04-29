@@ -34,7 +34,7 @@ class tx_OnpageSeo_tcemainprocdm {
     public function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, $callingTCEMAIN) {
         if($table == 'pages') {
             $sql = "SELECT keyword.title as title
-                    FROM tx_onpageseo_pages_keyword_mm mm
+                    FROM  tx_onpageseo_page_keyword_mm mm
                         LEFT JOIN tx_onpageseo_domain_model_keyword keyword
                             ON (keyword.uid = mm.uid_foreign)
                     WHERE mm.uid_local = ".$id."
